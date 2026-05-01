@@ -17,6 +17,7 @@ Provide these items up front:
 - Which parts are fixed, sliding, snapped, or threaded
 - What the preview should show first
 - What must be avoided
+- The project folder layout you want the model to follow
 
 ## Recommended Prompt Structure
 
@@ -32,6 +33,7 @@ Context:
 - The add-in runs Codex-authored Fusion API scripts from a project folder.
 - I will load the project in Fusion, click Run Preview, inspect the geometry, and iterate.
 - Do not rely on the add-in code itself. Work only from the project description I provide here.
+- Generate the project in the same folder structure used by the repo example.
 
 Design requirements:
 - Units: mm
@@ -51,7 +53,64 @@ Part structure:
 - Part 2: <name, role, key size>
 - Assembly behavior: <how parts should sit relative to each other>
 
+Project structure:
+- `project.json` defines the project name, units, global parameters, and the list of parts.
+- `assembly.py` positions the parts when more than one body or component needs placement.
+- `parts/*.py` contains one script per part.
+- `assemblies/*.json` is optional metadata for assembly placement or preview settings.
+
+Example folder shape:
+```text
+cad_projects/<project_name>/
+  project.json
+  assembly.py
+  parts/
+    part_1.py
+    part_2.py
+  assemblies/
+    main_assembly.json
+  reviews/
+    run_log.md
+```
+
+Example `project.json` shape:
+```json
+{
+  "project_name": "example_name",
+  "units": "mm",
+  "global_parameters": {
+    "clearance_mm": 0.4,
+    "wall_thickness_mm": 2.5
+  },
+  "parts": [
+    {
+      "name": "Main_Body",
+      "script": "parts/main_body.py",
+      "enabled": true,
+      "parameters": {
+        "width_mm": 120,
+        "depth_mm": 85,
+        "height_mm": 20
+      }
+    },
+    {
+      "name": "Top_Cover",
+      "script": "parts/top_cover.py",
+      "enabled": true,
+      "parameters": {
+        "width_mm": 120,
+        "depth_mm": 85,
+        "height_mm": 5
+      }
+    }
+  ]
+}
+```
+
 What I want you to generate:
+- First, write or update `project.json` so the project has a clear part list and parameters.
+- Then write the part scripts under `parts/`.
+- Then update `assembly.py` only if part placement is needed.
 - Update the project scripts for the part geometry.
 - Keep the project organized for the Fusion add-in.
 - Prefer stable, easy-to-preview geometry over clever but fragile geometry.
@@ -59,7 +118,7 @@ What I want you to generate:
 
 Output format:
 - Briefly summarize the plan.
-- Then provide the file-by-file changes or code.
+- Then provide the file-by-file changes or code, starting with `project.json`.
 - Mention any assumptions that were necessary.
 ```
 
