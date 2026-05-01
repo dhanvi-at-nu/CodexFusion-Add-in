@@ -1,0 +1,13 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "addin",
+  "author": "Codex",
+  "description": {
+    "": "Live Codex CAD preview runner for Fusion 360."
+  },
+  "version": "0.2.0",
+  "runOnStartup": false,
+  "supportedOS": "windows|mac",
+  "editEnabled": true,
+  "iconFilename": "AddInIcon.svg"
+}

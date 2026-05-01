@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "name": "Example_Box",
+      "translation": [0, 0, 0],
+      "rotation_deg": [0, 0, 0]
+    },
+    {
+      "name": "Example_Lid",
+      "translation": [0, 0, 40],
+      "rotation_deg": [25, 0, 0]
+    }
+  ]
+}

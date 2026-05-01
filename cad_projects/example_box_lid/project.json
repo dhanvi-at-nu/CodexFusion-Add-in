@@ -1,0 +1,30 @@
+{
+  "project_name": "example_box_lid",
+  "units": "mm",
+  "global_parameters": {
+    "wall_thickness": 2.5,
+    "clearance": 0.5
+  },
+  "parts": [
+    {
+      "name": "Example_Box",
+      "script": "parts/example_box.py",
+      "parameters": {
+        "width_mm": 120,
+        "depth_mm": 50,
+        "height_mm": 20
+      },
+      "enabled": true
+    },
+    {
+      "name": "Example_Lid",
+      "script": "parts/example_lid.py",
+      "parameters": {
+        "width_mm": 120,
+        "depth_mm": 50,
+        "height_mm": 10
+      },
+      "enabled": true
+    }
+  ]
+}

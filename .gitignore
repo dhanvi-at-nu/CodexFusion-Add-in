@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pyd
+*.stl
+*.step
+*.f3d
+exports/
+reviews/run_log.md
+startup_error.log
+.vscode/
+.DS_Store

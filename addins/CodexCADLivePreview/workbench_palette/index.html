@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex CAD Workbench</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Codex CAD Workbench</h1>
+      <p>Run Codex-authored Fusion scripts as persistent preview geometry.</p>
+    </header>
+
+    <label for="projectFolder">Project folder</label>
+    <div class="row">
+      <input id="projectFolder" type="text">
+      <button id="loadProject" type="button">Load</button>
+    </div>
+
+    <div id="status" class="status">Loading...</div>
+
+    <label class="check">
+      <input id="generateAll" type="checkbox" checked>
+      <span>Generate all enabled parts</span>
+    </label>
+
+    <label for="partSelect">Enabled part</label>
+    <select id="partSelect" disabled></select>
+
+    <label class="check">
+      <input id="applyAssembly" type="checkbox" checked>
+      <span>Run assembly.py / main_assembly.json</span>
+    </label>
+
+    <div class="button-row">
+      <button id="runPreview" class="primary" type="button">Run Preview</button>
+      <button id="exportStl" type="button">Export STL</button>
+    </div>
+
+    <label for="output">Output</label>
+    <pre id="output">Ready.</pre>
+  </main>
+</body>
+</html>
