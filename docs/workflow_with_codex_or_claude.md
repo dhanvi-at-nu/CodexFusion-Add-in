@@ -14,3 +14,5 @@ Recommended division of labor:
 - The add-in itself should stay stable and change only when the workflow needs it.
 
 Keep projects small and explicit. Use one project folder per design, and keep generated files, STL exports, and review logs out of version control.
+
+For a new chat instance, use [prompt_template_for_copilot.md](prompt_template_for_copilot.md) as the model briefing template.

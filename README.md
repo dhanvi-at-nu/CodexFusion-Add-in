@@ -29,3 +29,4 @@ Use `addins/CodexCADLivePreview` as the add-in folder inside Fusion, then point 
 - `addins/CodexCADLivePreview/fusion_runtime/` contains the preview runner helpers.
 - `cad_projects/example_box_lid/project.json` is the project manifest.
 - `cad_projects/example_box_lid/parts/` contains the part scripts.
+- `docs/prompt_template_for_copilot.md` gives a copy-paste prompt format for fresh chat sessions.
